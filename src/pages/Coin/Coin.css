@@ -1,0 +1,178 @@
+/* Theme Variables */
+:root {
+  --bg-color: #fff;
+  --card-bg: #f8fafc;
+  --text-color: #333;
+  --subtext-color: #374151;
+  --accent-color: #3b82f6;
+  --border-color: #e5e7eb;
+  --value-color: #111827;
+}
+
+.dark-theme {
+  --bg-color: #111827;
+  --card-bg: #1f2937;
+  --text-color: #e5e7eb;
+  --subtext-color: #9ca3af;
+  --accent-color: #10b981;
+  --border-color: #374151;
+  --value-color: #10b981;
+}
+
+/* Spinner */
+.spinner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50px;
+}
+
+.spin {
+  width: 50px;
+  height: 50px;
+  border: 6px solid rgba(255, 255, 255, 0.2);
+  border-top: 6px solid var(--accent-color);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* Main container */
+.coin {
+  max-width: 1100px;
+  margin: 2rem auto;
+  padding: 1.6rem;
+  background: var(--bg-color);
+  border-radius: 16px;
+  box-shadow: 0 4px 25px rgba(0,0,0,0.1);
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: var(--text-color);
+  transition: background 0.3s, color 0.3s;
+}
+
+/* Coin Title */
+.coin-name {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.coin-name img {
+  width: 65px;
+  height: 55px;
+  border-radius: 60px;
+  border: 2px solid var(--accent-color);
+}
+
+.coin-name p {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin: 0;
+  color: var(--text-color);
+}
+
+/* Theme Toggle Button */
+.theme-toggle {
+  display: flex;
+  justify-content: flex-end;
+  margin: 1rem 0;
+}
+
+.theme-toggle button {
+  padding: 0.5rem 1rem;
+  border: none;
+  background: var(--accent-color);
+  color: #fff;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background 0.2s ease;
+}
+
+.theme-toggle button:hover {
+  background: #2563eb;
+}
+
+/* Chart + Info Layout */
+.coin-content {
+  display: grid;
+  grid-template-columns: 2fr 1fr; /* chart wider, info narrower */
+  gap: 2rem;
+  margin: 1.5rem 0;
+}
+
+/* Chart */
+.coin-chart {
+  background: var(--card-bg);
+  border-radius: 12px;
+  padding: 1rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+.coin-chart canvas {
+  width: 100% !important;
+  height: auto !important;
+}
+
+/* Info Section */
+.coin-info {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.coin-info ul {
+  list-style: none;
+  background: var(--card-bg);
+  padding: 1rem;
+  border-radius: 12px;
+  border: 1px solid var(--border-color);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.3s ease;
+}
+
+.coin-info ul:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px var(--accent-color, rgba(59,130,246,0.5));
+}
+
+.coin-info li {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.95rem;
+  margin: 4px 0;
+}
+
+.coin-info li:first-child {
+  font-weight: 600;
+}
+
+.coin-info li:last-child {
+  font-weight: bold;
+  color: var(--value-color);
+}
+
+/* Dark mode adjustments */
+.coin.dark-theme {
+  background: var(--bg-color);
+  color: var(--text-color);
+}
+
+.coin.dark-theme .coin-info ul {
+  background: var(--card-bg);
+  border-color: var(--border-color);
+}
+
+.coin.dark-theme .theme-toggle button {
+  background: #2563eb;
+}
+
+/* Responsive: stack chart + info on smaller screens */
+@media (max-width: 1024px) {
+  .coin-content {
+    grid-template-columns: 1fr; /* stacked */
+  }
+}

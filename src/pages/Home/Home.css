@@ -1,0 +1,156 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.home {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #26059f, #1c82d5);
+  color: #97adbf;
+  padding: 2rem;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.container1 {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.container1 h1 {
+  font-size: 3rem;
+  font-weight: bold;
+  color: #09ef3b;
+  letter-spacing: -0.5px;
+}
+
+.container1 p {
+  font-size: 1rem;
+  color: #8b949e;
+  margin-top: 0.5rem;
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.container1 form {
+  margin-top: 1.5rem;
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.container1 input {
+  padding: 0.7rem 2rem;
+  border: 1px solid #38042c;
+  border-radius: 15px;
+  outline: none;
+  font-size: 1rem;
+  width: 330px;
+  background: rgba(237, 43, 75, 0.07);
+  color: #131313;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.container1 input:focus {
+  border-color: #de1bb4;
+  box-shadow: 0 0 0 3px rgba(2, 88, 185, 0.25);
+}
+
+.container1 input::placeholder {
+  color: #6e7681;
+}
+
+.container1 button {
+  padding: 0.7rem 2.5rem;
+  background: linear-gradient(135deg, #062dde, #1205c6);
+  color: #fff;
+  border: none;
+  border-radius: 9px;
+  cursor: pointer;
+  font-weight: bold;
+  letter-spacing: 0.5px;
+  transition: background 0.2s, transform 0.2s;
+}
+
+.container1 button:hover {
+  background: linear-gradient(135deg, #0855c9, #3c09d6);
+  transform: translateY(-1px);
+}
+
+.crypto-table {
+  background: rgba(240, 38, 244, 0.05);
+  border-radius: 12px;
+  padding: 1rem;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 25px rgba(124, 9, 9, 0.3);
+  overflow-x: auto;
+  border: 1px solid rgba(4, 95, 200, 0.15);
+}
+
+.table-layout {
+  display: grid;
+  grid-template-columns: 50px 200px 150px 150px 200px;
+  align-items: center;
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid rgba(11, 126, 198, 0.1);
+  transition: background 0.2s;
+}
+
+.table-layout:last-child {
+  border-bottom: none;
+}
+
+.table-layout p {
+  margin: 0;
+  font-size: 0.95rem;
+}
+
+.table-layout div {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.table-layout img {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  border: 1px solid rgba(21, 72, 131, 0.2);
+}
+
+.market-cap {
+  text-align: right;
+}
+
+.table-layout p:nth-child(4) {
+  font-weight: 600;
+  color: #0be128;
+}
+
+.table-layout:hover {
+  background: rgba(140, 222, 8, 0.08);
+}
+
+@media (max-width: 768px) {
+  .table-layout {
+    grid-template-columns: 40px 150px 100px 100px 120px;
+    font-size: 0.85rem;
+  }
+container1{
+      display: none;
+  }    
+}
+
+@media (max-width: 500px) {
+  .table-layout img {
+    width: 26px;
+  }
+table-layout{
+    font-size: 12px;
+  }   
+  .home form input{
+    width: 170px;
+  }
+
+}
